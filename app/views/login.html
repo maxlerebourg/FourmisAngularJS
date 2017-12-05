@@ -1,0 +1,15 @@
+<div ng-controller="LoginCtrl">
+  <form novalidate class="simple-form">
+
+    <label for="username">Username
+      <input type="text" id="username" ng-model="username" required="required"/>
+    </label>
+
+    <label for="password">Password
+      <input type="password" id="password" ng-model="password" required="required"/>
+    </label>
+
+    <input type="submit" ng-click="submit()" value="Submit"/>
+  </form>
+  <p>{{user}}</p>
+</div>

@@ -1,0 +1,39 @@
+<form novalidate>
+  <div>
+    <div class="form-group">
+      <label class="control-label required" for="email">Adresse e-mail</label>
+      <input id="email" ng-model="email" required="required" class="form-control" type="email" ng-value="valemail">
+    </div>
+    <div class="form-group">
+      <label class="control-label required" for="username">Nom d'utilisateur</label>
+      <input id="username" ng-model="username" required="required"
+             maxlength="180" pattern=".{2,}" class="form-control" type="text" ng-value="valuser">
+    </div>
+    <div class="form-group">
+      <label class="control-label required" for="plainPassword">Mot de passe</label>
+      <input id="plainPassword" ng-model="plainPassword"
+             required="required" class="form-control" type="password">
+    </div>
+    <div class="form-group">
+      <label class="control-label required" for="plainPassword_second">Répéter le mot de passe</label>
+      <input id="plainPassword_second" ng-model="plainPassword_second" required="required" class="form-control" type="password">
+    </div>
+    <div class="form-group">
+      <label class="control-label required" for="age">Age</label>
+      <input id="age" ng-model="age" required="required" class="form-control" type="number" ng-value="valage">
+    </div>
+    <div class="form-group">
+      <label class="control-label required" for="race">Race</label>
+      <select id="race" ng-model="race" class="form-control">
+      <option value="Fourmi rouge">Fourmi rouge</option>
+      <option value="Fourmi pharaon">Fourmi pharaon</option>
+      <option value="Fourmis charpentiere">Fourmi charpentiere</option>
+      <option value="Fourmi noir">Fourmi noire</option>
+    </select>
+    </div>
+  </div>
+  <div>
+    <input class="btn btn-primary" ng-click="register()" value="Create account" type="submit">
+  </div>
+
+</form>

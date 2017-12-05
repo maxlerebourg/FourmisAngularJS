@@ -1,0 +1,20 @@
+<div class="fourmi_detail" loading="loading">
+  <div class="row">
+    <div class="col-md-8">
+      <dl class="dl-horizontal">
+        <dt>Username : </dt><dd>{{fourmi.username}}</dd>
+        <dt>Age : </dt><dd>{{fourmi.age}}</dd>
+        <dt>Race : </dt><dd>{{fourmi.race}}</dd>
+        <dt>Family</dt>
+        <dd>
+          <ul>
+            <li ng-repeat="ant in fourmi.famille">{{ant.username}}</li>
+          </ul>
+        </dd>
+
+      </dl>
+      <a class="btn btn-secondary" ng-click="add()" ng-controller="FourmiCtrl" style="{{style1}}">add friend</a>
+      <a class="btn btn-secondary" ng-click="remove()" ng-controller="FourmiCtrl" style="{{style2}}">remove friend</a>
+    </div>
+  </div>
+</div>
