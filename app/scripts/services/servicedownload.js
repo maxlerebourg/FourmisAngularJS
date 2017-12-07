@@ -7,45 +7,46 @@
  * # serviceDownload
  * Factory in the coursExoApp.
  */
-var myApp = angular.module('coursExoApp')
+angular.module('coursExoApp')
   .factory('serviceDownload', function serviceDownload($http) {
+    var url = 'http://localhost/Fourmis/web/api';
     return{
       ants: function(){
-        return $http.get('http://localhost/Fourmis/web/app_dev.php/api/fourmis');
+        return $http.get(url + '/fourmis');
       },
       login: function($param){
-        return $http.post('http://localhost/Fourmis/web/app_dev.php/api/token', $param);
+        return $http.post(url + '/token', $param);
       },
       register: function($param){
-        return $http.post('http://localhost/Fourmis/web/app_dev.php/api/register', $param);
+        return $http.post(url + '/register', $param);
+      },
+      search: function($query){
+        return $http.get(url + '/search/'+$query);
       },
       update: function($param, $head){
-        return $http.put('http://localhost/Fourmis/web/app_dev.php/api/update', $param,{
+        return $http.put(url + '/update', $param,{
           headers: {'Authorization': 'Bearer '+$head}
         });
       },
       ant: function($id, $head){
-        return $http.get('http://localhost/Fourmis/web/app_dev.php/api/fourmi/'+$id, {
+        return $http.get(url + '/fourmi/'+$id, {
           headers: {'Authorization': 'Bearer '+$head}
         });
       },
       verif: function($head){
-        return $http.get('http://localhost/Fourmis/web/app_dev.php/api/verif', {
+        return $http.get(url + '/verif', {
           headers: {'Authorization': 'Bearer '+$head}
         });
       },
       add: function($id, $head){
-        return $http.get('http://localhost/Fourmis/web/app_dev.php/api/add/'+$id, {
+        return $http.get(url + '/add/'+$id, {
           headers: {'Authorization': 'Bearer '+$head}
         });
       },
       remove: function($id, $head){
-        return $http.get('http://localhost/Fourmis/web/app_dev.php/api/remove/'+$id, {
+        return $http.get(url + '/remove/'+$id, {
           headers: {'Authorization': 'Bearer '+$head}
         });
-      },
-      search: function($query){
-        return $http.get('http://localhost/Fourmis/web/app_dev.php/api/search/'+$query);
       }
     };
   });

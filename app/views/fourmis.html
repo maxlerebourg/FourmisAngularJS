@@ -1,8 +1,11 @@
-<div class="fourmis-container" id="top">
-  <p>List of ants</p>
-  <ul class="fourmis">
-    <li ng-repeat="ant in fourmis">
-      <a ng-href="#/fourmi/{{ant.id}}">{{ant.username}}</a>
-    </li>
+<div class="fourmis-container">
+  <pre>List of ants</pre>
+  <ul class="list-group">
+    <a ng-href="#/fourmi/{{ant.id}}" ng-repeat="ant in fourmis">
+      <li class="list-group-item d-flex justify-content-between align-items-center" >
+        {{ant.username}} : {{ant.race}}
+        <span class="badge badge-primary badge-pill" data-toggle="tooltip" data-placement="top" title="Friends">{{ant.famille.length}}</span>
+      </li>
+    </a>
   </ul>
 </div>

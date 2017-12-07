@@ -14,17 +14,9 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/popular', {
-        templateUrl: 'views/movies.html',
-        controller: 'PopularCtrl'
-      })
       .when('/search/:query', {
         templateUrl: 'views/fourmis.html',
         controller: 'SearchCtrl'
-      })
-      .when('/info/:id', {
-        templateUrl: 'views/info.html',
-        controller: 'InfoCtrl'
       })
       .when('/fourmis', {
         templateUrl: 'views/fourmis.html',
@@ -47,9 +39,14 @@ angular
         controllerAs: 'register'
       })
       .when('/update', {
-        templateUrl: 'views/register.html',
+        templateUrl: 'views/update.html',
         controller: 'UpdateCtrl',
         controllerAs: 'update'
+      })
+      .when('/profile', {
+        templateUrl: 'views/fourmi.html',
+        controller: 'ProfileCtrl',
+        controllerAs: 'profile'
       })
       .otherwise({
         redirectTo: '/fourmis'

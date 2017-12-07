@@ -8,7 +8,7 @@
  * Controller of the coursExoApp
  */
 angular.module('coursExoApp')
-  .controller('LoginCtrl', function ($scope, $rootScope, $routeParams, serviceDownload) {
+  .controller('LoginCtrl', function ($window, $scope, $rootScope, $routeParams, serviceDownload) {
     serviceDownload.verif($rootScope.token).success(function () {
       $scope.user = 'You are already connect';
     });
@@ -20,6 +20,8 @@ angular.module('coursExoApp')
         $rootScope.id = response.id;
         serviceDownload.ant(response.id,response.token).success(function (response) {
           $rootScope.user = response;
+          $rootScope.connect = response.username;
+          $window.location.href = '#/fourmis';
         });
       }).error(function(response) {
         $rootScope.user = response.status;
