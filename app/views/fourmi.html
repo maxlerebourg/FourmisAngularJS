@@ -5,12 +5,12 @@
         <li><p><b>Username : </b>{{fourmi.username}}</p></li>
         <li><p><b>Age : </b>{{fourmi.age}}</p></li>
         <li><p><b>Race : </b>{{fourmi.race}}</p></li>
-        <li><dt>Family</dt>
-        <dd>
+        <li><b>Family</b>
+
           <ul>
             <li ng-repeat="ant in fourmi.famille">{{ant.username}}</li>
           </ul>
-        </dd></li>
+        </li>
 
       </ul>
       <a class="btn btn-secondary" ng-href="#/fourmis">return to list</a>

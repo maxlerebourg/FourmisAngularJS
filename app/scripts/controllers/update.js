@@ -21,7 +21,7 @@ angular.module('coursExoApp')
     console.log($rootScope.user.email);
     //$scope.loading = false;
 
-    $scope.registers = function () {
+    $scope.updates = function () {
       var param = '{"username":"' + $scope.username +
         '", "plainPassword":"' + $scope.plainPassword +
         '", "email":"' + $scope.email +

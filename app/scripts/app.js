@@ -40,8 +40,7 @@ angular
       })
       .when('/update', {
         templateUrl: 'views/update.html',
-        controller: 'UpdateCtrl',
-        controllerAs: 'update'
+        controller: 'UpdateCtrl'
       })
       .when('/profile', {
         templateUrl: 'views/fourmi.html',
